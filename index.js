@@ -99,10 +99,37 @@ Baby.prototype.play = function(){
 /* 
   TASK 4
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
+
+  1. Window binding - Binding your function to the global object (the window) to be used globally.
+
+  2. Implicit binding - binding a 'this' to an object in which it's used to refer object itself Ex. -
+  let newPost = {
+    type: 'campus message'
+    location: 'bulletin board'
+    message: function ( ) {
+      console.log(`There is a new ${this.type} at the ${this.location}!`);
+    }
+  };
+  newPost.message()
+
+  3. Explicit binding - Using .call() and .bind() in order to call or bind specific cases using seperate objects in each different instance Ex . -
+  let child1 = {
+    name: 'Brian'
+    age: 5
+    faveFood: 'spaghetti'
+  }
+  let child2 = {
+    name: 'Chelsea'
+    age: 6
+    faveFood: 'chicken nuggets'
+  }
+  function intro() {
+    return `Hi, my name is ${this.name}, and I'm ${age} years old. I like ${faveFood}!`
+  }
+
+  4. Inheritance - Using previously built constructor functions which contain properties, characteristics, etc. to populate a new constructor function. 
+  HOWEVER, you can add more special properties and functions. You can do the same with the parent constructor function prototype functions 
+  and create the child function's prototype as well.
 */
 
 ///////// END OF CHALLENGE /////////
